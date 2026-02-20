@@ -1,4 +1,4 @@
-{% from 'bootstrap5/form.html' import render_field, render_form %}
+{% from 'bootstrap5/form.html' import render_field %}
 {% from 'bootstrap5/utils.html' import render_messages %}
 <!DOCTYPE html>
 <html lang="ja">
@@ -15,15 +15,17 @@
         <div class="row justify-content-center">
             <div class="col-md-6">
                 {{ render_messages(dismissible=True) }}
-                <h2 class="mb-4">ログイン画面</h2>
+                <h2 class="mb-4">サインアップ</h2>
                 <form action method="POST" class="form">
                     {{ render_field(form.username) }}
                     {{ render_field(form.password) }}
                     <div class="d-flex gap-2">
                         {{ render_field(form.submit, button_style='primary') }}
-                        <a href="{{ url_for('signup') }}" class="btn btn-outline-primary">サインアップ</a>
+                        <a href="{{ url_for('login') }}" class="btn btn-outline-primary">ログイン画面に戻る</a>
                     </div>
                 </form>
+            </div>
+        </div>
             </div>
         </div>
     </div>
